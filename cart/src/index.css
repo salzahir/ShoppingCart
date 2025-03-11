@@ -85,24 +85,31 @@ button:focus-visible {
 
 .products {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr); 
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 1em;
 }
 .product {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 1.6em 2em;
   gap: 1em;
   background-color: #1a1a1a;
   border-radius: 8px;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
-  border: 1px solid red
+  border: 1px solid gray;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.product:hover {
+  background-color: #333;
+  transform: scale(1.05);
 }
 
 .product img {
-  width: 100px;
-  height: 100px;
-  height: auto;
+  height: 250px;
+  width: 250px;
   border-radius: 8px;
 }

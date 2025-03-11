@@ -23,7 +23,7 @@ function Products() {
                         <h2>{product.title}</h2>
                         <img src={product.image} alt={product.title} />
                         <p>Category: {product.category}</p>
-                        <p>{product.description}</p>
+                        <p>Description: {product.description}</p>
                         <p>Price: {product.price}</p>
                         <button>Add to cart</button>
                     </li>
