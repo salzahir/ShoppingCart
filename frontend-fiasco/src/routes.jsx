@@ -3,6 +3,7 @@ import ErrorPage from "./ErrorPage"
 import Products from "./Products"
 import Profile from "./Profile"
 import Cart from "./Cart"
+import HomePage from "./Homepage"
 
 const routes = [
 
