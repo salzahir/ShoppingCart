@@ -5,8 +5,9 @@ function Header() {
         <header className="header">
             <button>Menu</button>
             <img src={logo} alt="Front End Fiasco Logo" />
-            <h1>Frontend Fiasco</h1>
+            <h2>Frontend Fiasco</h2>
             <button>Cart</button>
+            <button>Profile</button>
         </header>
     );
 }

@@ -70,12 +70,15 @@ button:focus-visible {
 
 .header {
   display: flex;
+  align-items: start;
   justify-content: space-between;
   align-items: center;
   padding: 1.6em 2em;
   background-color: #1a1a1a;
   gap: 1em;
   height: 50px;
+  border-radius: 8px;
+  margin-top: 0;
 }
 .header img {
   height: 2.4em;
