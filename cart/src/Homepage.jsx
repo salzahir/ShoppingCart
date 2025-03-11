@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function HomePage() {
     return (
         <div className="home">
@@ -25,6 +27,10 @@ function HomePage() {
                 Our store is powered by the Fake Store API, making it a great sandbox for 
                 developers, designers, and anyone curious about e-commerce interfaces.
             </p>
+
+            <Link to={"/products"}>
+                <button>Explore Products</button>
+            </Link>
         </div>
     );
 }
