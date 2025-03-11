@@ -1,7 +1,7 @@
 import './App.css'
 import HomePage from './Homepage'
 import Header from './Header'
-
+import Products from './Products'
 
 function App() {
 
@@ -9,6 +9,7 @@ function App() {
     <>
       <Header />
       <HomePage />
+      <Products />
     </>
   )
 }
