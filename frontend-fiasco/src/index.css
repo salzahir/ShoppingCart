@@ -146,6 +146,7 @@ button:focus-visible {
   gap: 1em;
   padding: 2em;
   background-color: #1a1a1a;
+  margin: 10px;
 }
 
 .cart-item {
@@ -158,6 +159,7 @@ button:focus-visible {
   border-radius: 8px;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
   border: 1px solid gray;
+  margin: 10px;
 }
 
 .cart-item img {
@@ -168,4 +170,5 @@ button:focus-visible {
 
 .cart-page {
   display: flex;
+  gap: 1em;
 }

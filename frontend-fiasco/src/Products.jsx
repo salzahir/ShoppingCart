@@ -7,7 +7,7 @@ import { useOutletContext } from "react-router-dom";
 function Products() {
 
     const [products, setProducts] = useState([])
-    const { cart, addToCart, removeFromCart, calculateCartTotal } = useOutletContext();
+    const { addToCart, calculateCartTotal } = useOutletContext();
 
     async function loadProducts() {
         try {
@@ -21,7 +21,6 @@ function Products() {
     useEffect(() => {
         loadProducts();
     }, []);
-
 
     return (
         <div className="market">

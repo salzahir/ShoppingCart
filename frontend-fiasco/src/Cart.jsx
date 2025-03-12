@@ -9,15 +9,15 @@ function Cart() {
 
     return (
         <>
-                    <h2>Cart</h2>
+        <h2>Cart</h2>
         <div className="cart-page">
             <ul className="cart">
             {cart.map(product => (
                 <CartItem 
                     key={product.id} 
                     product={product} 
-                    removeFromCart={removeFromCart} 
-                    quantity={1}  // Assuming you have quantity in the product object
+                    removeFromCart={() => removeFromCart(product.id)} 
+                    quantity={1}  
                 />
                 ))}
             </ul>

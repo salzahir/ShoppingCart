@@ -8,8 +8,8 @@ function Layout() {
     function addToCart(product) {
         setCart([...cart, product])
     }
-    function removeFromCart(product) {
-        setCart(cart.filter(item => item.id !== product.id))
+    function removeFromCart(productID) {
+        setCart(cart.filter(item => item.id !== productID))
     }
 
 
@@ -20,7 +20,7 @@ function Layout() {
     return (
         <>
             <Header />
-            <Outlet context={{ cart, addToCart, removeFromCart, calculateCartTotal}} />
+            <Outlet context={{ cart, setCart, addToCart, removeFromCart, calculateCartTotal}} />
         </>
     );
 }
