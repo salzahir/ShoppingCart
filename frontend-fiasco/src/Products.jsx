@@ -8,6 +8,7 @@ function Products() {
 
     const [products, setProducts] = useState([])
     const { addToCart, calculateCartTotal } = useOutletContext();
+    const [loading, setLoading] = useState(true);
 
     async function loadProducts() {
         try {
@@ -16,11 +17,23 @@ function Products() {
         } catch (error) {
             console.error("Failed to fetch products:", error);
         }
+        finally {
+            setLoading(false);
+        }
     }
 
     useEffect(() => {
         loadProducts();
     }, []);
+
+    if (loading) {
+        return (
+            <div className="loading-container">
+                <div className="spinner"></div>
+                <p>Fetching the latest products...</p>
+            </div>
+        );
+    }
 
     return (
         <div className="market">
