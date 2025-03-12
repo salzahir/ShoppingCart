@@ -8,12 +8,16 @@ function Cart() {
 
     return (
         <>
-        <h2>Cart</h2>
-        {cart.length === 0 ? (
-            <p>Your cart is empty. Start adding some products!</p>
-        ) : (
-            <p>Click on the products to remove them from the cart</p>
-        )}
+            <h2>Cart</h2>
+            {cart.length === 0 ? (
+                <p>
+                    Your cart is currently empty. Start adding products to bring it to life!  
+                    Browse our selection of clothing, electronics, household essentials, and more.  
+                    Check out today's deals or visit your Wish List to get started.
+                </p>
+            ) : (
+                <p>Tap on a product to remove it from your cart.</p>
+            )}
 
         <div className="cart-page">
             <ul className="cart">

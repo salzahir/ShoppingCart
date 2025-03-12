@@ -14,7 +14,8 @@ function parseProducts(products) {
         price: product.price,
         description: product.description,
         category: product.category,
-        image: product.image
+        image: product.image,
+        quantity: 1
     }))
 }
 
