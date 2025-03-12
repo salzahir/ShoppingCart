@@ -1,8 +1,8 @@
-import parseProducts from "./api";
-import {fetchProducts} from "./api";
+import fetchProducts from "./api";
 import {useEffect, useState} from "react";
 import ProductItem from "./ProductItem";
 import { useOutletContext } from "react-router-dom";
+import LoadingIndicator from "./LoadingIndicator";
 
 function Products() {
 
@@ -13,7 +13,7 @@ function Products() {
     async function loadProducts() {
         try {
             const products = await fetchProducts();
-            setProducts(parseProducts(products));
+            setProducts(products);
         } catch (error) {
             console.error("Failed to fetch products:", error);
         }
@@ -27,12 +27,7 @@ function Products() {
     }, []);
 
     if (loading) {
-        return (
-            <div className="loading-container">
-                <div className="spinner"></div>
-                <p>Fetching the latest products...</p>
-            </div>
-        );
+        return <LoadingIndicator />;
     }
 
     return (
