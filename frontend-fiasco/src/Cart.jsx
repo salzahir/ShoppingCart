@@ -1,7 +1,6 @@
 import ProductItem from "./ProductItem";
-import { useOutletContext } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 import CartItem from "./CartItem";
-
 
 function Cart() {
 
@@ -10,6 +9,12 @@ function Cart() {
     return (
         <>
         <h2>Cart</h2>
+        {cart.length === 0 ? (
+            <p>Your cart is empty. Start adding some products!</p>
+        ) : (
+            <p>Click on the products to remove them from the cart</p>
+        )}
+
         <div className="cart-page">
             <ul className="cart">
             {cart.map(product => (
@@ -22,12 +27,15 @@ function Cart() {
                 ))}
             </ul>
             
-            <div>
-                <h3>Cart Summary</h3>
-                <p>Items in Cart: {cart.length}</p>
-                <p>Total: $ {calculateCartTotal()}</p>
-                <button>Checkout</button>
-            </div>
+        <div className="cart-summary">
+            <h3>Cart Summary</h3>
+            <p>Items in Cart: {cart.length}</p>
+            <p>Subtotal: ${calculateCartTotal()}</p>
+            <p>Taxes (10%): ${ (calculateCartTotal() * 0.1).toFixed(2) }</p>
+            <p><strong>Grand Total: ${(calculateCartTotal() * 1.1).toFixed(2)}</strong></p>
+            <button>Checkout</button>
+            <Link to="/products"><button>Continue Shopping</button></Link>
+        </div>
 
         </div>
         </>
