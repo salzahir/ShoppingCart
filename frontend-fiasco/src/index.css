@@ -113,6 +113,7 @@ button:focus-visible {
   flex-wrap: wrap;
   gap: 1em;
 }
+
 .product {
   display: flex;
   flex-direction: column;
@@ -136,4 +137,35 @@ button:focus-visible {
   height: 250px;
   width: 250px;
   border-radius: 8px;
+}
+
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 2em;
+  background-color: #1a1a1a;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.6em 2em;
+  gap: 1em;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+  border: 1px solid gray;
+}
+
+.cart-item img {
+  height: 50px;
+  width: 50px;
+  border-radius: 8px;
+}
+
+.cart-page {
+  display: flex;
 }
