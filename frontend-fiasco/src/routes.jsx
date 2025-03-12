@@ -4,35 +4,32 @@ import Products from "./Products"
 import Profile from "./Profile"
 import Cart from "./Cart"
 import HomePage from "./Homepage"
+import Layout from "./Layout"
 
 const routes = [
-
     {
         path: "/",
-        element: <App />,
-        exact: true,
+        element: <Layout />,
         errorElement: <ErrorPage />,
-    }, 
-
-    {
-        path: "/products",
-        element: <Products />,
-        exact: true,
-        errorElement: <ErrorPage />,
-    },
-
-    {
-        path: "/profile",
-        element: <Profile />,
-        exact: true,
-        errorElement: <ErrorPage />,
-    },
-
-    {
-        path: "/cart",
-        element: <Cart />,
-        errorElement: <ErrorPage/>
+        children: [
+            {
+                index: true,
+                element: <HomePage />
+            },
+            {
+                path: "products",
+                element: <Products />
+            },
+            {
+                path: "profile",
+                element: <Profile />
+            },
+            {
+                path: "cart",
+                element: <Cart />
+            }
+        ]
     }
-]
+];
 
 export default routes
