@@ -1,20 +1,29 @@
 import parseProducts from "./api";
 import {fetchProducts} from "./api";
 import {useEffect, useState} from "react";
+import ProductItem from "./ProductItem";
 
 function Products() {
     const [products, setProducts] = useState([])
     const [cart, setCart] = useState([])
 
-    useEffect(() => {
-        fetchProducts().then(products => {
-            setProducts(parseProducts(products))
-        })
-    }, [])
-
     function addToCart(product) {
         setCart([...cart, product])
     }
+
+    async function loadProducts() {
+        try {
+            const products = await fetchProducts();
+            setProducts(parseProducts(products));
+        } catch (error) {
+            console.error("Failed to fetch products:", error);
+        }
+    }
+
+    useEffect(() => {
+        loadProducts();
+    }, []);
+
 
     function calculateCartTotal() {
         return cart.reduce((total, product) => total + product.price, 0);
@@ -27,20 +36,11 @@ function Products() {
             <p>Total: $ {calculateCartTotal()}</p>
             <ul className="products">
                 {products.map(product => (
-                    <li key={product.id} className="product">
-                        <p>Id: {product.id}</p>
-                        <h2>{product.title}</h2>
-                        <img src={product.image} alt={product.title} />
-                        <p>Category: {product.category}</p>
-                        <p>Description: {product.description}</p>
-                        <p>Price: $ {product.price}</p>
-                        <button onClick={() => addToCart(product)}>Add to cart</button>                    </li>
+                    <ProductItem key={product.id} product={product} addToCart={addToCart} />
                 ))}
             </ul>
         </div>
     );
-
-
 }
 
 export default Products;

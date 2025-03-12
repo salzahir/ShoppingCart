@@ -7,7 +7,6 @@ async function  fetchProducts() {
     }
 }
 
-
 function parseProducts(products) {
     return products.map(product => ({
         id: product.id,
