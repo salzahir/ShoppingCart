@@ -1,6 +1,9 @@
 import QuantityInput from "./QuantityInput";
+import { useState } from "react";
 
-function ProductItem({ product, addToCart, quantity, setQuantity }) {
+function ProductItem({ product, addToCart}) {
+
+    const [quantity, setQuantity] = useState(1);
 
     return ( 
         <li key={product.id} className="product">
@@ -12,7 +15,6 @@ function ProductItem({ product, addToCart, quantity, setQuantity }) {
             <p>Price: $ {product.price}</p>
             <button onClick={() => addToCart({...product, quantity})}>Add to cart</button>
             <QuantityInput quantity={quantity} setQuantity={setQuantity} />
-
         </li>
     );
 }

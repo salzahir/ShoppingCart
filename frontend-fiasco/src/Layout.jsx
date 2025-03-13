@@ -6,8 +6,6 @@ function Layout() {
 
     const [cart, setCart] = useState([])
 
-    const [quantity, setQuantity] = useState(1);
-
     function addToCart(product) {
         setCart([...cart, product])
     }
@@ -20,10 +18,15 @@ function Layout() {
         return cart.reduce((total, product) => total + product.price * product.quantity, 0);
     }
 
+    function calculateItemsInCart() {
+        return cart.reduce((total, product) => total + product.quantity,
+        0);
+    }
+
     return (
         <>
             <Header />
-            <Outlet context={{ cart, setCart, quantity, setQuantity, addToCart, removeFromCart, calculateCartTotal}} />
+            <Outlet context={{ cart, setCart, addToCart, removeFromCart, calculateCartTotal, calculateItemsInCart}} />
         </>
     );
 }

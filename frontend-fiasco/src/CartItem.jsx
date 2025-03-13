@@ -1,6 +1,10 @@
 import QuantityInput from "./QuantityInput";
+import { useState } from "react";
 
-function CartItem({ product, removeFromCart, quantity, setQuantity }) {
+function CartItem({ product, removeFromCart}) {
+
+    const [quantity, setQuantity] = useState(product.quantity);
+
     return (
       <li key={product.id} className="cart-item">
         <img src={product.image} alt={product.title} />
