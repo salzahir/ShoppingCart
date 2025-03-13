@@ -1,15 +1,15 @@
-import fetchProducts from "./api";
+import fetchProducts from "../utils/api";
 import {useEffect, useState} from "react";
-import ProductItem from "./ProductItem";
+import ProductItem from "../components/ProductItem";
 import { useOutletContext } from "react-router-dom";
-import LoadingIndicator from "./LoadingIndicator";
+import LoadingIndicator from "../components/LoadingIndicator";
 
 function Products() {
 
     const [products, setProducts] = useState([])
     const { addToCart, calculateCartTotal} = useOutletContext();
     const [loading, setLoading] = useState(true);
-    
+
     async function loadProducts() {
         try {
             const products = await fetchProducts();

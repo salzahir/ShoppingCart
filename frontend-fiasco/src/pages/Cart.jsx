@@ -1,7 +1,7 @@
-import ProductItem from "./ProductItem";
+import ProductItem from "../components/ProductItem";
 import { Link, useOutletContext } from "react-router-dom";
-import CartItem from "./CartItem";
-import CartMessage from "./cartMessage";
+import CartItem from "../components/CartItem";
+import CartMessage from "../components/CartMessage";
 
 function Cart() {
 
