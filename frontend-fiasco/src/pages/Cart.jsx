@@ -7,7 +7,7 @@ import { ShopContext } from "../context/ShopContext";
 
 function Cart() {
 
-    const { cart, removeFromCart, calculateCartTotal, calculateItemsInCart } = useContext(ShopContext);
+    const { cart, removeFromCart, calculateCartTotal, calculateItemsInCart, updateCartQuantity } = useContext(ShopContext);
 
     return (
         <>
@@ -20,6 +20,7 @@ function Cart() {
                     key={product.id} 
                     product={product} 
                     removeFromCart={() => removeFromCart(product.id)} 
+                    updateCartQuantity={updateCartQuantity}
                 />
                 ))}
             </ul>

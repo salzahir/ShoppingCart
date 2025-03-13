@@ -22,8 +22,14 @@ export function ShopProvider({children}) {
         0);
     }
 
+    function updateCartQuantity(productID, newQuantity) {
+        setCart(cart => cart.map(item =>
+            item.id === productID ? { ...item, quantity: newQuantity } : item
+        ));
+    }
+
     return (
-        <ShopContext.Provider value={{cart, setCart, addToCart, removeFromCart, calculateCartTotal, calculateItemsInCart}}>
+        <ShopContext.Provider value={{cart, setCart, addToCart, removeFromCart, calculateCartTotal, calculateItemsInCart, updateCartQuantity}}>
             {children}
         </ShopContext.Provider>
     );
