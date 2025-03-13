@@ -1,9 +1,9 @@
-import './App.css'
-import HomePage from './Homepage'
-import Header from './Header'
+import "./styles/App.css";
+import HomePage from './pages/Homepage'
+import Header from './components/Header'
 
 function App() {
-  
+
   return (
     <>
       <Header></Header>

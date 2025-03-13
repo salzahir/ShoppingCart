@@ -1,10 +1,10 @@
-import App from "./App"
-import ErrorPage from "./ErrorPage"
-import Products from "./Products"
-import Profile from "./Profile"
-import Cart from "./Cart"
-import HomePage from "./Homepage"
-import Layout from "./Layout"
+import App from "../App"
+import ErrorPage from "../pages/ErrorPage"
+import Products from "../pages/Products"
+import Profile from "../pages/Profile"
+import Cart from "../pages/Cart"
+import HomePage from "../pages/Homepage"
+import Layout from "../layout/Layout"
 
 const routes = [
     {
