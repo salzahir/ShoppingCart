@@ -1,7 +1,7 @@
-function ProductItem({ product, addToCart }) {
+import QuantityInput from "./QuantityInput";
 
-    // const [quantity, setQuantity] = useState(1);
-    
+function ProductItem({ product, addToCart, quantity, setQuantity }) {
+
     return ( 
         <li key={product.id} className="product">
             <p>Id: {product.id}</p>
@@ -10,16 +10,8 @@ function ProductItem({ product, addToCart }) {
             <p>Category: {product.category}</p>
             <p>Description: {product.description}</p>
             <p>Price: $ {product.price}</p>
-            <button onClick={() => addToCart(product)}>Add to cart</button>
-
-            {/* <label htmlFor="quantity">Select Quantity:</label>
-            <input 
-                type="number" 
-                id="quantity" 
-                min="1" 
-                value={quantity} 
-                onChange={(e) => setQuantity(Number(e.target.value))}
-            /> */}
+            <button onClick={() => addToCart({...product, quantity})}>Add to cart</button>
+            <QuantityInput quantity={quantity} setQuantity={setQuantity} />
 
         </li>
     );

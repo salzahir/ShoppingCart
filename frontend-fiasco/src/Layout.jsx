@@ -6,6 +6,8 @@ function Layout() {
 
     const [cart, setCart] = useState([])
 
+    const [quantity, setQuantity] = useState(1);
+
     function addToCart(product) {
         setCart([...cart, product])
     }
@@ -21,7 +23,7 @@ function Layout() {
     return (
         <>
             <Header />
-            <Outlet context={{ cart, setCart, addToCart, removeFromCart, calculateCartTotal}} />
+            <Outlet context={{ cart, setCart, quantity, setQuantity, addToCart, removeFromCart, calculateCartTotal}} />
         </>
     );
 }

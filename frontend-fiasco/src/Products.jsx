@@ -7,7 +7,7 @@ import LoadingIndicator from "./LoadingIndicator";
 function Products() {
 
     const [products, setProducts] = useState([])
-    const { addToCart, calculateCartTotal } = useOutletContext();
+    const { addToCart, calculateCartTotal, quantity, setQuantity} = useOutletContext();
     const [loading, setLoading] = useState(true);
 
     async function loadProducts() {
@@ -37,7 +37,7 @@ function Products() {
             <p>Total: $ {calculateCartTotal()}</p>
             <ul className="products">
                 {products.map(product => (
-                    <ProductItem key={product.id} product={product} addToCart={addToCart} />
+                    <ProductItem key={product.id} product={product} addToCart={addToCart} quantity={quantity} setQuantity={setQuantity} />
                 ))}
             </ul>
         </div>

@@ -214,3 +214,22 @@ button:focus-visible {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+/* .quantity-input {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  width: ;
+} */
+
+/* .quantity-input input {
+  width: 50px;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  border: 1px solid gray;
+  color: #646cff;
+} */
